@@ -30,7 +30,7 @@ function MainPage() {
                     <a href="#about" className="hover:text-gray-400 text-sm">
                         About
                     </a>
-                    <Button text='Contact' bg="bg-[#ff9e14]" size="px-6 py-2" textColor="text-white"/>
+                    <Button text='Contact' bg="bg-[#00e676]" size="px-6 py-2" textColor="text-white"/>
                 </div>
 
                 <button

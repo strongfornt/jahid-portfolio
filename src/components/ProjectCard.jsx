@@ -3,6 +3,7 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { Link } from "react-router-dom";
 
 export default function ProjectCard({ project, isWide }) {
   const [hovered, setHovered] = useState(false);
@@ -25,9 +26,9 @@ export default function ProjectCard({ project, isWide }) {
       });
 
       gsap.to(textRef.current, {
-        y: e.movementY <0 ? -2 : 2,
-        x: e.movementX < 0 ? -2 : 2
-      })
+        y: e.movementY < 0 ? -2 : 2,
+        x: e.movementX < 0 ? -2 : 2,
+      });
 
       // Clear any previous timeout to reset text position
       if (timeoutRef.current) {
@@ -79,11 +80,12 @@ export default function ProjectCard({ project, isWide }) {
   };
 
   return (
-    <div
+    <Link
+      to={project.link} // Link the cursor mask to the actual project URL
       ref={cardRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`flex relative flex-col justify-end cursor-pointer w-full h-[30.3rem] object-cover rounded-3xl overflow-hidden ${
+      className={`flex relative flex-col z-20 justify-end cursor-pointer w-full h-[30.3rem] object-cover rounded-3xl overflow-hidden ${
         isWide ? "col-auto md:col-span-7" : "col-auto md:col-span-5"
       } bg-cover bg-no-repeat`}
       style={{ backgroundImage: `url(${project.image})` }}
@@ -112,18 +114,21 @@ export default function ProjectCard({ project, isWide }) {
       </div>
 
       {/* Cursor Mask */}
-      <div
+      <a
+        href={project.link}
+        target="_blank"
         ref={cursorRef}
-        className="absolute -top-14 -left-11 w-24 h-24 bg-[#00e676] rounded-full pointer-events-none flex items-center justify-center"
+        className="absolute -top-14 -left-11 w-24 h-24 bg-[#00e676] rounded-full z-10 pointer-events-auto flex items-center justify-center"
         style={{ opacity: 0, transform: "scale(0)" }} // Hidden by default
       >
         <span
           ref={textRef}
-          className="text-lg  absolute left-7 top-8 font-bold text-white"
+          className="text-lg absolute left-7 top-8 font-bold text-white"
         >
           View
         </span>
-      </div>
-    </div>
+      </a>
+    </Link>
   );
 }
+

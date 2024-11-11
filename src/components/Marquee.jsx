@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { horizontalLoop } from "./horizontalLoop";
 import Card from "./Card";
 const Marquee = ({ cards }) => {
-
+  const [isCardMove, setIsCardMove] = useState(false);
   const marqueeRef = useRef(null);
   useEffect(() => {
     const items = marqueeRef.current.children;
@@ -34,17 +34,31 @@ const Marquee = ({ cards }) => {
       });
     });
 
+       // Pause on mouse enter, resume on mouse leave
+
+       if(isCardMove) {
+        loopTimeline.pause();
+
+       }else {
+        loopTimeline.resume();
+
+       }
+   
+      //  marqueeRef.current.addEventListener("mouseenter", handleMouseEnter);
+      //  marqueeRef.current.addEventListener("mouseleave", handleMouseLeave);
+
     return () => {
       loopTimeline.kill();
+     
     };
-  }, [cards]);
+  }, [cards,isCardMove]);
 
   return (
     <>
-      <div className="picker pt-10 md:pt-20 h-[500px]" ref={marqueeRef}>
+      <div className="picker pt-10 md:pt-20 h-[500px] " ref={marqueeRef}>
         {cards.map((card, index) => (
-          <div key={index} className="cell  ">
-            <Card title={card.title} image={card.image} />
+          <div key={index}  className="cell" >
+            <Card setIsCardMove={setIsCardMove} title={card.title} image={card.image} />
           </div>
         ))}
       </div>
