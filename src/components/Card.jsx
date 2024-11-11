@@ -3,7 +3,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ArrowUpRight, Github } from "lucide-react";
 import { useRef, useState } from "react";
-const Card = ({ title, image, isActive,setIsCardMove}) => {
+import { Link } from "react-router-dom";
+const Card = ({ title, image,link, isActive,setIsCardMove}) => {
   const [hovered, setHovered] = useState(false);
   const timeoutRef = useRef(null);
   const cursorRef = useRef(null);
@@ -78,9 +79,11 @@ const Card = ({ title, image, isActive,setIsCardMove}) => {
       ease: "power3.out",
     });
   };
+console.log(link);
 
   return (
-    <div
+   <Link to={link}>
+     <div
       ref={cardRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -110,9 +113,11 @@ const Card = ({ title, image, isActive,setIsCardMove}) => {
         </div>
       </div>
       {/* Cursor Mask */}
-      <div
+ 
+
+   <div
         ref={cursorRef}
-        className="absolute -top-14 -left-11 w-24 h-24 bg-[#00e676] rounded-full pointer-events-none flex items-center justify-center"
+        className="absolute -top-14 -left-11 w-24 h-24 bg-[#00e676] rounded-full  flex items-center justify-center"
         style={{ opacity: 0, transform: "scale(0)" }} // Hidden by default
       >
         <span
@@ -122,7 +127,9 @@ const Card = ({ title, image, isActive,setIsCardMove}) => {
           View
         </span>
       </div>
+  
     </div>
+   </Link>
   );
 };
 

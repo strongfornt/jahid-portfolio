@@ -36,8 +36,8 @@ const projects = [
   {
     id: 3,
     title: "Telescopic mast",
-    image: "/recent_project3.png",
     link:"hhttps://telescopicmast.com/",
+    image: "/recent_project3.png",
     category: "Wordpress",
     technologies: [
       "Elementor Pro",
@@ -49,8 +49,8 @@ const projects = [
   {
     id: 4,
     title: "Rosetta ebooks",
-    image: "/recent_project4.png",
     link:"https://www.rosettaebooks.com/",
+    image: "/recent_project4.png",
     category: "Wordpress",
     technologies: [
       "Elementor Pro",
@@ -62,8 +62,8 @@ const projects = [
   {
     id: 5,
     title: "Business website",
-    image: "/recent_project5.png",
     link:"https://www.the-salon.com.au/",
+    image: "/recent_project5.png",
     category: "React JS",
     technologies: [
       "Elementor Pro",
@@ -77,8 +77,8 @@ const projects = [
   {
     id: 6,
     title: "TED Blog",
-    image: "/recent_project6.png",
     link:"https://www.the-salon.com.au/",
+    image: "/recent_project6.png",
     category: "React JS",
     technologies: [
       "Elementor Pro",

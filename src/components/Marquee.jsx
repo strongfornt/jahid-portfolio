@@ -60,7 +60,7 @@ const Marquee = ({ cards }) => {
       <div className="picker pt-10 md:pt-20 h-[500px] " ref={marqueeRef}>
         {cards.map((card, index) => (
           <div key={index}  className="cell" >
-            <Card setIsCardMove={setIsCardMove} title={card.title} image={card.image} />
+            <Card setIsCardMove={setIsCardMove} link={card.link} title={card.title} image={card.image} />
           </div>
         ))}
       </div>

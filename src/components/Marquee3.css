@@ -10,8 +10,8 @@
     transform: scale(0.8);
   }
   
-  .marquee-item.active {
-    transform: scale(1.1); /* Scale up the active card */
+  /* .marquee-item.active {
+    transform: scale(1.1);
     z-index: 1;
   }
-  
+   */

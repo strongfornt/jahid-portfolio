@@ -5,9 +5,9 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Marquee from "./Marquee";
 import Card from "./Card";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation } from 'swiper/modules';
-import 'swiper/css';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css";
 import Marquee2 from "./Marquee2";
 import Marquee3 from "./Marquee3";
 
@@ -17,12 +17,27 @@ gsap.registerPlugin(ScrollTrigger);
 export default function ProjectShowcase() {
   const projectShowRef = useRef(null);
   const projects = [
-    { id: 1, title: "Weather app", image: "/project1.png" },
-    { id: 2, title: "Landing page", image: "/project2.jpeg" },
-    { id: 3, title: "B2B App", image: "/project3.png" },
-    { id: 4, title: "E-commerce", image: "/project2.jpeg" },
-    { id: 5, title: "Marketing", image: "/project2.jpeg" },
-    { id: 6, title: "Portfolio Website", image: "/project2.jpeg" },
+    {
+      id: 1,
+      title: "The Salon",
+      link: "https://www.the-salon.com.au/",
+      image: "/recent_project1.png",
+    },
+    { id: 2, title: "Lab salon and browstudio",
+      link:"https://labsalonandbrowstudio.com/", image: "/recent_project2.png" },
+    { id: 3,  title: "Telescopic mast",
+      link:"hhttps://telescopicmast.com/", image: "/recent_project3.png" },
+    { id: 4,
+      title: "Rosetta ebooks",
+    link:"https://www.rosettaebooks.com/", image: "/recent_project4.png" },
+    { id: 5, 
+      title: "Business website",
+      link:"https://www.the-salon.com.au/",
+      image: "/recent_project5.png" },
+    { id: 6, 
+      title: "TED Blog",
+      link:"https://www.the-salon.com.au/",
+      image: "/recent_project6.png" },
   ];
   return (
     <div
@@ -36,37 +51,36 @@ export default function ProjectShowcase() {
         <h3 className="text-3xl md:text-5xl font-bold mb-12 text-center">
           Explore more projects
         </h3>
-        <div className="hidden md:block" >
-        {/* <Marquee cards={projects} /> */}
+        <div className="hidden md:block">
+          <Marquee cards={projects} />
 
-        {/* <Marquee2 cards={projects} /> */}
-        <Marquee3 cards={projects} />
+          {/* <Marquee2 cards={projects} /> */}
+          {/* <Marquee3 cards={projects} /> */}
         </div>
 
         {/* mobile version */}
         <div className="md:hidden">
-        <div className="md:hidden">
-      <Swiper
-        spaceBetween={10}
-        slidesPerView={1}
-        navigation={true}
-        loop={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        modules={[Autoplay, Navigation]}
-      >
-        {projects.map((card, index) => (
-          <SwiperSlide key={index}>
-            <div className="cell">
-              <Card title={card.title} image={card.image} />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
-            
+          <div className="md:hidden">
+            <Swiper
+              spaceBetween={10}
+              slidesPerView={1}
+              navigation={true}
+              loop={true}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              modules={[Autoplay, Navigation]}
+            >
+              {projects.map((card, index) => (
+                <SwiperSlide key={index}>
+                  <div className="cell">
+                    <Card title={card.title} image={card.image} />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
       </div>
     </div>
