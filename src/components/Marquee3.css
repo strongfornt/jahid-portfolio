@@ -1,0 +1,17 @@
+.marquee-container {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .marquee-item {
+    display: inline-block;
+    transition: transform 0.3s ease; /* Smooth transition */
+    margin: 0 10px;
+    transform: scale(0.8);
+  }
+  
+  .marquee-item.active {
+    transform: scale(1.1); /* Scale up the active card */
+    z-index: 1;
+  }
+  

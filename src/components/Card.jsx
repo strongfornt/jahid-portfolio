@@ -57,7 +57,7 @@ const Card = ({ title, image, isActive,setIsCardMove}) => {
   }, [hovered]);
 
   const handleMouseEnter = () => {
-    // setIsCardMove(true);
+    setIsCardMove(true);
     setHovered(true);
     // Show the mask with fromTo animation on hover
     gsap.fromTo(
@@ -68,7 +68,7 @@ const Card = ({ title, image, isActive,setIsCardMove}) => {
   };
 
   const handleMouseLeave = () => {
-    // setIsCardMove(false);
+    setIsCardMove(false);
     setHovered(false);
     // Hide the mask with a smooth animation on leave
     gsap.to(cursorRef.current, {

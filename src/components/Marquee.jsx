@@ -51,6 +51,8 @@ const Marquee = ({ cards }) => {
       loopTimeline.kill();
      
     };
+
+    
   }, [cards,isCardMove]);
 
   return (

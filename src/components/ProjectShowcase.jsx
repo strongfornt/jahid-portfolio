@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import Marquee2 from "./Marquee2";
+import Marquee3 from "./Marquee3";
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -37,7 +38,9 @@ export default function ProjectShowcase() {
         </h3>
         <div className="hidden md:block" >
         {/* <Marquee cards={projects} /> */}
-        <Marquee2 cards={projects} />
+
+        {/* <Marquee2 cards={projects} /> */}
+        <Marquee3 cards={projects} />
         </div>
 
         {/* mobile version */}

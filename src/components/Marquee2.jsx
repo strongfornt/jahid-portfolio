@@ -42,7 +42,7 @@ export default function Marquee2({cards}) {
         speed={1700}
        
         autoplay={{
-            delay: 800,
+            delay: 1,
             disableOnInteraction: true,
             // pauseOnMouseEnter: true, // Pause autoplay on hover (optional)
           }}     
