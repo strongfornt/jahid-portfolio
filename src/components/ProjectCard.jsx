@@ -3,7 +3,7 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { Link } from "react-router-dom";
+
 
 export default function ProjectCard({ project, isWide }) {
   const [hovered, setHovered] = useState(false);
@@ -80,8 +80,8 @@ export default function ProjectCard({ project, isWide }) {
   };
 
   return (
-    <Link
-      to={project.link} // Link the cursor mask to the actual project URL
+    <div
+      // Link the cursor mask to the actual project URL
       ref={cardRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -128,7 +128,7 @@ export default function ProjectCard({ project, isWide }) {
           View
         </span>
       </a>
-    </Link>
+    </div>
   );
 }
 
