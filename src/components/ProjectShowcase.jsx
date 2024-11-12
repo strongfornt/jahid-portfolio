@@ -79,7 +79,7 @@ export default function ProjectShowcase() {
               slidesPerView={1}
               // pagination= {{clickable:true}}
               loop={true}
-              speed={1000}
+              speed={1500}
               autoplay={{
                 delay: 500,
                 disableOnInteraction: true,
@@ -91,7 +91,7 @@ export default function ProjectShowcase() {
               {projects.map((card, index) => (
                 <SwiperSlide key={index}>
                   <div className="cell">
-                    <Card title={card.title} image={card.image} />
+                    <Card title={card.title} link={card.link} image={card.image} />
                   </div>
                 </SwiperSlide>
               ))}
