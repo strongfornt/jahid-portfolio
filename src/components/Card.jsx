@@ -88,7 +88,7 @@ const Card = ({
 
 
   return (
-    <Link to={link}>
+    <a href={link} target="_blank">
       <div
         ref={cardRef}
         onMouseEnter={() => {
@@ -139,7 +139,7 @@ const Card = ({
           </span>
         </div>
       </div>
-    </Link>
+    </a>
   );
 };
 

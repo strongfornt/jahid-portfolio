@@ -33,7 +33,7 @@ export default function ProjectShowcase() {
     {
       id: 3,
       title: "Telescopic mast",
-      link: "hhttps://telescopicmast.com/",
+      link: "https://telescopicmast.com/",
       image: "/recent_project3.png",
     },
     {
