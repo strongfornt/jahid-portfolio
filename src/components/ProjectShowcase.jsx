@@ -6,10 +6,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Marquee from "./Marquee";
 import Card from "./Card";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
-import Marquee2 from "./Marquee2";
-import Marquee3 from "./Marquee3";
+
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -68,9 +67,6 @@ export default function ProjectShowcase() {
         </h3>
         <div className="hidden md:block">
           <Marquee cards={projects} />
-
-          {/* <Marquee2 cards={projects} /> */}
-          {/* <Marquee3 cards={projects} /> */}
         </div>
 
         {/* mobile version */}
@@ -79,13 +75,13 @@ export default function ProjectShowcase() {
             <Swiper
               spaceBetween={10}
               slidesPerView={1}
-              navigation={true}
+              pagination= {{clickable:true}}
               loop={true}
               autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
               }}
-              modules={[Autoplay, Navigation]}
+              modules={[Autoplay, Pagination]}
             >
               {projects.map((card, index) => (
                 <SwiperSlide key={index}>

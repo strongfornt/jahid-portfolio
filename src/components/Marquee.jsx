@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { horizontalLoop } from "./horizontalLoop";
 import Card from "./Card";
@@ -24,8 +24,11 @@ const Marquee = ({ cards }) => {
       Array.from(items).forEach((item) => {
         const itemRect = item.getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;
-        const distanceFromCenter = Math.abs(itemRect.left + itemRect.width / 2 - centerX);
-        const scaleValue = 1.3 - Math.min(distanceFromCenter / (rect.width / 2), 0.4);
+        const distanceFromCenter = Math.abs(
+          itemRect.left + itemRect.width / 2 - centerX
+        );
+        const scaleValue =
+          1.3 - Math.min(distanceFromCenter / (rect.width / 2), 0.4);
         gsap.to(item, {
           scale: scaleValue > 0.6 ? scaleValue : 0.6, // minimum scale at 0.6
           duration: 0.5,
@@ -42,7 +45,6 @@ const Marquee = ({ cards }) => {
 
   // Event handlers to control pause and play on hover
   const handleMouseEnter = () => {
-    
     loopTimeline.current && loopTimeline.current.pause();
   };
 
@@ -53,13 +55,18 @@ const Marquee = ({ cards }) => {
   return (
     <div
       className="picker pt-10 md:pt-20 h-[500px]"
-      // onMouseEnter={handleMouseEnter}
-      // onMouseLeave={handleMouseLeave}
+
       ref={marqueeRef}
     >
       {cards.map((card, index) => (
         <div key={index} className="cell">
-          <Card link={card.link} title={card.title} handleMouseIsEnter={handleMouseEnter} handleMouseIsLeave={handleMouseLeave} image={card.image} />
+          <Card
+            link={card.link}
+            title={card.title}
+            handleMouseIsEnter={handleMouseEnter}
+            handleMouseIsLeave={handleMouseLeave}
+            image={card.image}
+          />
         </div>
       ))}
     </div>
@@ -67,4 +74,3 @@ const Marquee = ({ cards }) => {
 };
 
 export default Marquee;
-
