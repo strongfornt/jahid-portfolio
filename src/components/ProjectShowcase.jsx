@@ -23,21 +23,36 @@ export default function ProjectShowcase() {
       link: "https://www.the-salon.com.au/",
       image: "/recent_project1.png",
     },
-    { id: 2, title: "Lab salon and browstudio",
-      link:"https://labsalonandbrowstudio.com/", image: "/recent_project2.png" },
-    { id: 3,  title: "Telescopic mast",
-      link:"hhttps://telescopicmast.com/", image: "/recent_project3.png" },
-    { id: 4,
+    {
+      id: 2,
+      title: "Lab salon and browstudio",
+      link: "https://labsalonandbrowstudio.com/",
+      image: "/recent_project2.png",
+    },
+    {
+      id: 3,
+      title: "Telescopic mast",
+      link: "hhttps://telescopicmast.com/",
+      image: "/recent_project3.png",
+    },
+    {
+      id: 4,
       title: "Rosetta ebooks",
-    link:"https://www.rosettaebooks.com/", image: "/recent_project4.png" },
-    { id: 5, 
+      link: "https://www.rosettaebooks.com/",
+      image: "/recent_project4.png",
+    },
+    {
+      id: 5,
       title: "Business website",
-      link:"https://www.the-salon.com.au/",
-      image: "/recent_project5.png" },
-    { id: 6, 
+      link: "https://www.the-salon.com.au/",
+      image: "/recent_project5.png",
+    },
+    {
+      id: 6,
       title: "TED Blog",
-      link:"https://www.the-salon.com.au/",
-      image: "/recent_project6.png" },
+      link: "https://www.the-salon.com.au/",
+      image: "/recent_project6.png",
+    },
   ];
   return (
     <div

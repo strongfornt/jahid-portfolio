@@ -1,29 +1,23 @@
 /* eslint-disable react/prop-types */
-
 import React, { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
-
-import "./Marquee3.css";
 import Card from "./Card";
+import "./Marquee3.css";
 
 export default function Marquee3({ cards }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Function to update the active index periodically
+  // Update the active index periodically
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % cards.length);
-    }, 1000); // Adjust timing for a smooth transition
+    }, 1000); // Adjust timing for smooth transition
     return () => clearInterval(interval);
   }, [cards.length]);
 
   return (
     <div className="marquee-container">
-      <Marquee
-        gradient={false}      // Disable gradient for continuous flow
-        speed={200}            // Adjust speed for marquee effect
-        pauseOnHover={true}   // Pause on hover
-      >
+      <Marquee gradient={false} speed={200} pauseOnHover={true}>
         {cards.map((card, index) => (
           <div
             key={index}
@@ -36,3 +30,4 @@ export default function Marquee3({ cards }) {
     </div>
   );
 }
+

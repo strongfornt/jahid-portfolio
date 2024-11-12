@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { ArrowUpRight, Github } from "lucide-react";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-const Card = ({ title, image,link, isActive,setIsCardMove}) => {
+const Card = ({ title, image,link, isActive, handleMouseIsEnter, handleMouseIsLeave}) => {
   const [hovered, setHovered] = useState(false);
   const timeoutRef = useRef(null);
   const cursorRef = useRef(null);
@@ -58,7 +58,6 @@ const Card = ({ title, image,link, isActive,setIsCardMove}) => {
   }, [hovered]);
 
   const handleMouseEnter = () => {
-    setIsCardMove(true);
     setHovered(true);
     // Show the mask with fromTo animation on hover
     gsap.fromTo(
@@ -69,7 +68,7 @@ const Card = ({ title, image,link, isActive,setIsCardMove}) => {
   };
 
   const handleMouseLeave = () => {
-    setIsCardMove(false);
+   
     setHovered(false);
     // Hide the mask with a smooth animation on leave
     gsap.to(cursorRef.current, {
@@ -79,14 +78,22 @@ const Card = ({ title, image,link, isActive,setIsCardMove}) => {
       ease: "power3.out",
     });
   };
-console.log(link);
+
+console.log(handleMouseIsEnter);
+
 
   return (
    <Link to={link}>
      <div
       ref={cardRef}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={() => {
+        handleMouseEnter()
+        handleMouseIsEnter()
+      }}
+      onMouseLeave={() => {
+        handleMouseLeave()
+        handleMouseIsLeave()
+      }}
       className={`group relative overflow-hidden bg-yellow-800 rounded-3xl h-[230px] md:h-[400px] cursor-pointer transition-all duration-300 ${
         isActive ? "scale-110 z-10" : "scale-90"
       }`}
