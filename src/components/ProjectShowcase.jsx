@@ -8,6 +8,8 @@ import Card from "./Card";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
+// import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 
 // Register ScrollTrigger
@@ -42,14 +44,14 @@ export default function ProjectShowcase() {
     },
     {
       id: 5,
-      title: "Business website",
-      link: "https://www.the-salon.com.au/",
+      title: "Shogun",
+      link: "https://getshogun.com/",
       image: "/recent_project5.png",
     },
     {
       id: 6,
-      title: "TED Blog",
-      link: "https://www.the-salon.com.au/",
+      title: "Playground",
+      link: "https://playground.com/",
       image: "/recent_project6.png",
     },
   ];
@@ -75,13 +77,16 @@ export default function ProjectShowcase() {
             <Swiper
               spaceBetween={10}
               slidesPerView={1}
-              pagination= {{clickable:true}}
+              // pagination= {{clickable:true}}
               loop={true}
+              speed={1000}
               autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
+                delay: 500,
+                disableOnInteraction: true,
               }}
-              modules={[Autoplay, Pagination]}
+              // disableOnInteraction={true}
+              navigation={true}
+              modules={[Autoplay, Pagination,Navigation]}
             >
               {projects.map((card, index) => (
                 <SwiperSlide key={index}>
