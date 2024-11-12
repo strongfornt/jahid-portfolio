@@ -10,6 +10,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 // import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from "react-icons/io";
 
 
 // Register ScrollTrigger
@@ -85,7 +86,10 @@ export default function ProjectShowcase() {
                 disableOnInteraction: true,
               }}
               // disableOnInteraction={true}
-              navigation={true}
+              navigation={{
+                nextEl: ".custom-next",
+                prevEl: ".custom-prev",
+              }}
               modules={[Autoplay, Pagination,Navigation]}
             >
               {projects.map((card, index) => (
@@ -95,6 +99,16 @@ export default function ProjectShowcase() {
                   </div>
                 </SwiperSlide>
               ))}
+
+                {/* Custom Navigation Buttons */}
+                <div className="flex  gap-4 items-center justify-center " >
+                <div className="custom-prev text-[#4ade80] rounded-full">
+                  <IoIosArrowDropleftCircle className="cursor-pointer" size={40} />
+                </div>
+                <div className="custom-next text-[#4ade80] rounded-full">
+                  <IoIosArrowDroprightCircle className="cursor-pointer" size={40} />
+                </div>
+              </div>
             </Swiper>
           </div>
         </div>
