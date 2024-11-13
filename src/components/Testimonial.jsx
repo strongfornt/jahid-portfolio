@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import TextReveal2 from "./TextReveal2";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,7 +41,7 @@ export default function Testimonial() {
     const [activeTestimonial, setActiveTestimonial] = useState(testimonials[0]);
     const testimonialRefs = useRef([]);
 
-    useEffect(() => {
+    useGSAP(() => {
         testimonials.forEach((testimonial, index) => {
             const textElement = testimonialRefs.current[index].querySelector('.reveal-type');
             const text = new SplitType(textElement, { types: "chars" });
@@ -100,17 +101,17 @@ export default function Testimonial() {
             });
         });
 
-        // Pin author section
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: '.author',
-                start: "top 280",
-                // end: 'top top-=650',
-                end: window.innerWidth > 1024 ? 'top top-=1050' : 'top top-=550',
-                scrub: true,
-                pin: true,
-            },
-        });
+      // Pin author section
+      gsap.timeline({
+        scrollTrigger: {
+            trigger: '.author',
+            start: "top 280",
+            // end: 'top top-=650',
+            end: window.innerWidth > 1024 ? 'top top-=1050' : 'top top-=550',
+            scrub: true,
+            pin: true,
+},});
+     
 
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -118,8 +119,8 @@ export default function Testimonial() {
     }, []);
 
     return (
-        <div className="bg-black text-white font-sans min-h-screen flex flex-col items-center testimonial">
-            <div className="max-w-[1120px] mx-auto relative w-full">
+        <div className="bg-black text-white font-sans min-h-screen relative flex flex-col items-center testimonial">
+            <div className="max-w-[1120px] mx-auto relative  w-full">
                 <div className="mb-6 md:mb-12 mt-8">
                     <h2 className="text-xs uppercase tracking-wider mb-4 text-center md:text-start">What they said</h2>
                     <hr className="border-gray-800" />
@@ -162,7 +163,7 @@ export default function Testimonial() {
 
                 {/* Avatar Section - Fixed in the center */}
                 <div className="hidden md:block">
-                    <div className="flex flex-col items-end gap-4 absolute top-24  md:top-12 lg:top-36 right-0 md:right-5 lg:-right-10 author z-20">
+                    <div className="flex flex-col  items-end gap-4 absolute top-24  md:top-12 lg:top-36 right-0 md:right-5 lg:-right-10 author z-20">
                         {testimonials.map((testimonial) => (
                             <div
                                 key={testimonial.id}

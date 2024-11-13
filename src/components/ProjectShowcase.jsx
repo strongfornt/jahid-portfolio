@@ -10,8 +10,10 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 // import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from "react-icons/io";
-
+import {
+  IoIosArrowDropleftCircle,
+  IoIosArrowDroprightCircle,
+} from "react-icons/io";
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -21,39 +23,63 @@ export default function ProjectShowcase() {
   const projects = [
     {
       id: 1,
-      title: "The Salon",
-      link: "https://www.the-salon.com.au/",
+      title: "Lugz",
+      link: "https://lugz.com/",
       image: "/recent_project1.png",
     },
     {
       id: 2,
-      title: "Lab salon and browstudio",
-      link: "https://labsalonandbrowstudio.com/",
+      title: "Playstation",
+      link: "https://blog.playstation.com/",
       image: "/recent_project2.png",
     },
     {
       id: 3,
-      title: "Telescopic mast",
-      link: "https://telescopicmast.com/",
+      title: "Pinchofyum",
+      link: "https://pinchofyum.com/",
       image: "/recent_project3.png",
     },
     {
       id: 4,
-      title: "Rosetta ebooks",
-      link: "https://www.rosettaebooks.com/",
+      title: "Walnut",
+      link: "https://www.walnut.io/",
       image: "/recent_project4.png",
     },
     {
       id: 5,
-      title: "Shogun",
-      link: "https://getshogun.com/",
+      title: "Academyselfdefense",
+      link: "https://academyselfdefense.com/",
       image: "/recent_project5.png",
     },
     {
       id: 6,
-      title: "Playground",
-      link: "https://playground.com/",
+      title: "Eden-grow",
+      link: "hhttps://www.eden-grow.de/",
       image: "/recent_project6.png",
+    },
+    {
+      id: 7,
+      title: "Bilberrry",
+      link: "https://bilberrry.com/",
+      image: "/recent_project7.png",
+    },
+    {
+      id: 8,
+      title: "Skysys",
+      link: "https://myskysys.com/",
+      image: "/recent_project8.png",
+    },
+    {
+      id: 9,
+      title: "Sacballet",
+      link: "https://www.sacballet.org/",
+      image: "/recent_project9.png",
+    },
+    {
+      id: 10,
+      title: "WebXd",
+      link: "https://webxd.net/",
+      image: "/recent_project10.png",
     },
   ];
   return (
@@ -90,23 +116,33 @@ export default function ProjectShowcase() {
                 nextEl: ".custom-next",
                 prevEl: ".custom-prev",
               }}
-              modules={[Autoplay, Pagination,Navigation]}
+              modules={[Autoplay, Pagination, Navigation]}
             >
               {projects.map((card, index) => (
                 <SwiperSlide key={index}>
                   <div className="cell">
-                    <Card title={card.title} link={card.link} image={card.image} />
+                    <Card
+                      title={card.title}
+                      link={card.link}
+                      image={card.image}
+                    />
                   </div>
                 </SwiperSlide>
               ))}
 
-                {/* Custom Navigation Buttons */}
-                <div className="flex  gap-4 items-center justify-center " >
+              {/* Custom Navigation Buttons */}
+              <div className="flex  gap-4 items-center justify-center ">
                 <div className="custom-prev text-[#4ade80] rounded-full">
-                  <IoIosArrowDropleftCircle className="cursor-pointer" size={40} />
+                  <IoIosArrowDropleftCircle
+                    className="cursor-pointer"
+                    size={40}
+                  />
                 </div>
                 <div className="custom-next text-[#4ade80] rounded-full">
-                  <IoIosArrowDroprightCircle className="cursor-pointer" size={40} />
+                  <IoIosArrowDroprightCircle
+                    className="cursor-pointer"
+                    size={40}
+                  />
                 </div>
               </div>
             </Swiper>
