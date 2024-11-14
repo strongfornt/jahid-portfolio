@@ -231,6 +231,8 @@ export default function ProjectShowcase() {
           {filteredProjects.slice(0, visibleProjects).map((project, index) => {
             const pairIndex = Math.floor(index / 2) % spans.length;
             const span = spans[pairIndex][index % 2];
+            console.log(span);
+            
             return (
               <ProjectCard key={project.id} project={project} isWide={span} />
             );

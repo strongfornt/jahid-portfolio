@@ -85,7 +85,7 @@ export default function ProjectCard({ project, isWide }) {
       ref={cardRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`flex relative flex-col z-20 justify-end cursor-pointer w-full h-[30.3rem] object-cover rounded-3xl overflow-hidden md:col-span-${isWide} col-auto  bg-cover bg-no-repeat`}
+      className={`flex relative flex-col z-20 justify-end cursor-pointer w-full h-[30.3rem] object-cover rounded-3xl overflow-hidden ${isWide === 7 ? ' md:col-span-7' : ' md:col-span-5'} col-auto  bg-cover bg-no-repeat`}
       style={{ backgroundImage: `url(${project.image})` }}
     >
       <div className="flex items-center gap-4 p-6">

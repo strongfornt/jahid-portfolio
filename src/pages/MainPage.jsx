@@ -7,11 +7,6 @@ function MainPage() {
         setIsOpen(!isOpen);       
     };
 
-    // useEffect(() => {
-    //     document.body.addEventListener('click', () => {
-    //         setIsOpen(false)
-    //     })
-    // }, [])
     return (
         <div className="main-section ">
             {/* Navbar */}
