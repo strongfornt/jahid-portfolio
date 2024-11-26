@@ -36,7 +36,7 @@ export default function Footer() {
             className="border-t border-[#FDFDFD59] pt-4"
           >
             <SocialLink
-              platform="Upwork"
+              platform="Up work"
               username="@jahid"
               icon={<FaSquareUpwork className="w-8 h-8" />}
             />

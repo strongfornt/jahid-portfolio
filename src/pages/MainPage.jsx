@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import Button from "../components/shared/Button";
 import { Link } from "react-router-dom";
 function MainPage() {

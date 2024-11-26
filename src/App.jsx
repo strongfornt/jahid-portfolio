@@ -6,7 +6,7 @@ import Testimonial from "./components/Testimonial";
 import TextMarquee from "./components/TextMarquee";
 import WhatIDo from "./components/WhatIDo";
 import WorkExperience from "./components/WorkExperience";
-import MainPage from "./pages/MainPage";
+
 import RecentProjects from "./components/RecentProjects";
 
 function App() {
